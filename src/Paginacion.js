@@ -1,15 +1,18 @@
 export default function Paginacion(props){
 
-    const getPaginas = () =>{
+    const getPaginas = () => {
         const resultado = [];
-        /* recorro el total de paginas en un for, inicializo la pag y en el arreglo resultado lo pego*/
-        for(let i =0; i<props.total; i++){ 
-            let pagina = i +1; 
-            resultado.push(<a onClick={()=>props.onChange(pagina)} className={props.pagina === pagina ? "active": ""} >{pagina}</a>)
-            
+        for (let i = 0; i < props.total; i++) {
+          let pagina = i + 1;
+          resultado.push(
+            <a onClick={() => props.onChange(pagina)}
+              className={props.pagina === pagina ? 'active' : ''}>
+              {pagina}
+            </a>
+          );
         }
         return resultado;
-    }
+      }
     
     return(
         <div className="topbar-filter">
